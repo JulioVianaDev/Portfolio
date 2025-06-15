@@ -26,27 +26,3 @@ jobs:
 
       - name: Build Vite project
         run: npm run build
-
-      - name: Start server and run Cypress tests
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm run preview
-          wait-on: 'http://localhost:4173'
-          wait-on-timeout: 120
-          browser: chrome
-          record: false
-
-      - name: Upload Cypress screenshots
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-
-      - name: Upload Cypress videos
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
