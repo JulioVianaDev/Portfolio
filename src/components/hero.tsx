@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
 
           <p className="mb-8 text-lg text-muted-foreground">
-            Optimizing applications to handle millions of requests with 12 years of programming experience
+            Optimizing applications to handle millions of requests with 8 years of programming experience
           </p>
 
           <div className="mb-10 flex flex-wrap items-center justify-center gap-4">
@@ -61,7 +61,7 @@ export default function Hero() {
 
           <div className="flex justify-center space-x-6">
             <motion.a
-              href="https://github.com/julioviana"
+              href="https://github.com/juliovianadev"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -72,7 +72,7 @@ export default function Hero() {
               <span className="sr-only">GitHub</span>
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/julioviana"
+              href="https://linkedin.com/in/julio-viana-dev"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}

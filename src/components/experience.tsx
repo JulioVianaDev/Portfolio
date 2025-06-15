@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import SectionHeading from "./section-heading"
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import SectionHeading from "./section-heading";
 
 const experiences = [
   {
@@ -14,7 +14,6 @@ const experiences = [
       "Optimized API performance to handle millions of requests by reducing CPU usage from 92% to 18%, significantly lowering infrastructure costs.",
       "Increased request handling capacity by up to 42x in some cases, ensuring the system could scale efficiently under high traffic loads.",
       "Reduced average report generation time from 10 seconds to 210ms, improving user experience and system responsiveness.",
-      "Enhanced memory efficiency in the React Native mobile app, enabling message lists to run at 60 FPS even on older devices, improving accessibility.",
       "Refactored database queries and caching strategies to improve overall system performance, reducing latency and accelerating data retrieval.",
       "Implemented tracing and performance logs across 100+ connected images, improving debugging, monitoring, and overall system observability.",
     ],
@@ -26,23 +25,24 @@ const experiences = [
     achievements: [
       "Developed and sold a Learning Management System (LMS) to a university.",
       "Built a complete system including classes, notes, and student management.",
+      "Enhanced memory efficiency in the React Native mobile app, enabling message lists to run at 60 FPS even on older devices, improving accessibility.",
       "Expanded the platform by implementing a React Native mobile app to attract new students.",
       "Ensured high availability and performance, making the platform suitable for academic use.",
     ],
   },
   {
     title: "Mid Level Content Teacher",
-    company: "Vlog SuperGeeks",
+    company: "SuperGeeks",
     period: "2020 - 2023",
     achievements: [
       "Recorded technical classes on mobile and web development, covering Rails API, Rails Fullstack, React with Redux Toolkit, Context API, Zustand, and Grafana.",
-      "Trained junior developers in best practices for architecture, ensuring performance optimization and scalability.",
-      "Mentored junior developers to prevent performance bottlenecks, improving their ability to design scalable applications.",
+      "Trained  developers in best practices for architecture, ensuring performance optimization and scalability.",
+      "Mentored  developers to prevent performance bottlenecks, improving their ability to design scalable applications.",
     ],
   },
   {
-    title: "Junior/Mid Level Content Teacher",
-    company: "Vlog SuperGeeks",
+    title: "Fullstack Developer",
+    company: "Freelancer",
     period: "2017 - 2022",
     achievements: [
       "Developed a custom LMS platform from scratch, handling architecture, backend, and frontend implementation.",
@@ -51,7 +51,7 @@ const experiences = [
       "Worked on multiple projects, delivering scalable and efficient software solutions across different industries.",
     ],
   },
-]
+];
 
 export default function Experience() {
   return (
@@ -73,8 +73,12 @@ export default function Experience() {
                 <CardHeader>
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <CardTitle className="text-xl font-bold">{exp.title}</CardTitle>
-                      <p className="text-lg font-medium text-muted-foreground">{exp.company}</p>
+                      <CardTitle className="text-xl font-bold">
+                        {exp.title}
+                      </CardTitle>
+                      <p className="text-lg font-medium text-muted-foreground">
+                        {exp.company}
+                      </p>
                     </div>
                     <Badge variant="outline" className="text-sm font-medium">
                       {exp.period}
@@ -96,5 +100,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

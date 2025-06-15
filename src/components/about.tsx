@@ -25,7 +25,7 @@ export default function About() {
           className="mx-auto max-w-3xl mb-12 text-center"
         >
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I started programming 12 years ago and have been working as a developer for 7 years. I participated in
+            I started programming 12 years ago and have been working as a developer for 8 years. I participated in
             robotics competitions in the USA, where I won awards. Currently, I am a Full-Stack Developer focused on
             optimizing API performance to handle millions of requests.
           </p>

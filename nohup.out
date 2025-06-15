@@ -1,0 +1,10 @@
+[90m[main 2025-06-15T03:42:44.314Z][0m updateURL https://api2.cursor.sh/updates/api/update/linux-x64/cursor/0.50.5/e7368d38d9d72305e8ca1990a2b61f6ed5ac1f983f08638e03290dc24d9703ba/stable
+[90m[main 2025-06-15T03:42:44.315Z][0m update#setState idle
+[91m[main 2025-06-15T03:42:49.031Z][0m vscode-file: Refused to load resource /tmp/.mount_cursor9mv6ed/usr/share/cursor/resources/app/extensions/theme-seti/icons/seti.woff from vscode-file: protocol (original URL: vscode-file://vscode-app/tmp/.mount_cursor9mv6ed/usr/share/cursor/resources/app/extensions/theme-seti/icons/seti.woff)
+[220268:0615/004249.135157:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 1 times!
+[220268:0615/004249.136299:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 2 times!
+[90m[main 2025-06-15T03:43:18.425Z][0m update#setState checking for updates
+[90m[main 2025-06-15T03:43:20.045Z][0m update#setState ready
+[90m[main 2025-06-15T03:43:55.396Z][0m Extension host with pid 220366 exited with code: 0, signal: unknown.
+[220268:0615/004404.865999:ERROR:gl_surface_presentation_helper.cc(260)] GetVSyncParametersIfAvailable() failed for 3 times!
+[220074:0615/013147.703982:ERROR:browser_main_loop.cc(278)] Gdk: gdk_window_get_window_type: assertion 'GDK_IS_WINDOW (window)' failed

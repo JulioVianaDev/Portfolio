@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import SectionHeading from "./section-heading"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import SectionHeading from "./section-heading";
 
 const skillCategories = [
   {
     name: "Programming Languages",
     skills: [
       { name: "JavaScript", years: 8, level: 95 },
-      { name: "TypeScript", years: 4, level: 90 },
-      { name: "Ruby", years: 4, level: 85 },
-      { name: "Golang", years: 1, level: 70 },
-      { name: "Python", years: 2, level: 75 },
+      { name: "TypeScript", years: 5, level: 90 },
+      { name: "Ruby", years: 5, level: 85 },
+      { name: "Golang", years: 2, level: 70 },
+      { name: "Python", years: 7, level: 85 },
     ],
   },
   {
@@ -22,17 +22,21 @@ const skillCategories = [
       { name: "React JS", years: 6, level: 95 },
       { name: "React Native", years: 4, level: 90 },
       { name: "Ruby on Rails", years: 4, level: 85 },
-      { name: "Next.js", years: 3, level: 90 },
+      { name: "Next.js", years: 4, level: 90 },
       { name: "NestJS", years: 3, level: 85 },
+      { name: "Tailwind CSS", years: 4, level: 90 },
     ],
   },
   {
     name: "Databases & Storage",
     skills: [
-      { name: "MongoDB", years: 4, level: 85 },
-      { name: "PostgreSQL", years: 5, level: 90 },
+      { name: "MongoDB", years: 5, level: 85 },
+      { name: "PostgreSQL", years: 6, level: 90 },
+      { name: "Mariadb", years: 3, level: 90 },
       { name: "MySQL", years: 5, level: 85 },
       { name: "Redis", years: 3, level: 80 },
+      { name: "Elasticsearch", years: 2, level: 80 },
+      { name: "DynamoDB", years: 1, level: 70 },
     ],
   },
   {
@@ -53,7 +57,7 @@ const skillCategories = [
       { name: "OpenTelemetry", years: 1, level: 70 },
     ],
   },
-]
+];
 
 export default function Skills() {
   return (
@@ -80,10 +84,13 @@ export default function Skills() {
                           <div className="flex items-center">
                             <span className="font-medium">{skill.name}</span>
                             <span className="ml-2 text-xs text-muted-foreground">
-                              ({skill.years} {skill.years === 1 ? "year" : "years"})
+                              ({skill.years}{" "}
+                              {skill.years === 1 ? "year" : "years"})
                             </span>
                           </div>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                          <span className="text-sm text-muted-foreground">
+                            {skill.level}%
+                          </span>
                         </div>
                         <Progress value={skill.level} className="h-2" />
                       </div>
@@ -96,5 +103,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
