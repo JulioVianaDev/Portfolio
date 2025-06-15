@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import SectionHeading from "./section-heading";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const skillCategories = [
   {
-    name: "Programming Languages",
+    key: "programmingLanguages",
     skills: [
       { name: "JavaScript", years: 8, level: 95 },
       { name: "TypeScript", years: 5, level: 90 },
@@ -17,7 +18,7 @@ const skillCategories = [
     ],
   },
   {
-    name: "Frameworks & Libraries",
+    key: "frameworksLibraries",
     skills: [
       { name: "React JS", years: 6, level: 95 },
       { name: "React Native", years: 4, level: 90 },
@@ -28,7 +29,7 @@ const skillCategories = [
     ],
   },
   {
-    name: "Databases & Storage",
+    key: "databasesStorage",
     skills: [
       { name: "MongoDB", years: 5, level: 85 },
       { name: "PostgreSQL", years: 6, level: 90 },
@@ -40,7 +41,7 @@ const skillCategories = [
     ],
   },
   {
-    name: "Cloud & DevOps",
+    key: "cloudDevOps",
     skills: [
       { name: "AWS", years: 3, level: 80 },
       { name: "Docker", years: 4, level: 85 },
@@ -49,10 +50,12 @@ const skillCategories = [
     ],
   },
   {
-    name: "Performance & Observability",
+    key: "performanceObservability",
     skills: [
       { name: "Grafana", years: 2, level: 80 },
       { name: "Prometheus", years: 2, level: 75 },
+      { name: "New Relic", years: 2, level: 75 },
+      { name: "Jeager", years: 2, level: 75 },
       { name: "Datadog", years: 1, level: 70 },
       { name: "OpenTelemetry", years: 1, level: 70 },
     ],
@@ -60,10 +63,13 @@ const skillCategories = [
 ];
 
 export default function Skills() {
+  const { translations, language } = useLanguage();
+  const t = translations[language].skillsSection;
+
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <SectionHeading title="Skills" subtitle="My Technical Expertise" />
+        <SectionHeading title={t.title} subtitle={t.subtitle} />
 
         <div className="grid gap-8 md:grid-cols-2">
           {skillCategories.map((category, categoryIndex) => (
@@ -76,7 +82,9 @@ export default function Skills() {
             >
               <Card className="border-none shadow-lg h-full">
                 <CardContent className="pt-6">
-                  <h3 className="mb-6 text-xl font-bold">{category.name}</h3>
+                  <h3 className="mb-6 text-xl font-bold">
+                    {t.categories[category.key]}
+                  </h3>
                   <div className="space-y-6">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex}>
@@ -85,7 +93,10 @@ export default function Skills() {
                             <span className="font-medium">{skill.name}</span>
                             <span className="ml-2 text-xs text-muted-foreground">
                               ({skill.years}{" "}
-                              {skill.years === 1 ? "year" : "years"})
+                              {skill.years === 1
+                                ? t.years.singular
+                                : t.years.plural}
+                              )
                             </span>
                           </div>
                           <span className="text-sm text-muted-foreground">

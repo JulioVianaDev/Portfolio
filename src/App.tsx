@@ -9,21 +9,24 @@ import Blog from "@/components/blog";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import Header from "./components/header";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Education />
-      {/* <Projects /> */}
-      <Awards />
-      {/* <Blog /> */}
-      <Contact />
-      <Footer />
-    </main>
+    <LanguageProvider>
+      <main className="min-h-screen">
+        <Header />
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Education />
+        {/* <Projects /> */}
+        <Awards />
+        {/* <Blog /> */}
+        <Contact />
+        <Footer />
+      </main>
+    </LanguageProvider>
   );
 }

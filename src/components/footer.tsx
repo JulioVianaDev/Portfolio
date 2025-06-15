@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { language, translations } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="border-t py-12">
       <div className="container mx-auto px-4">
@@ -13,7 +17,9 @@ export default function Footer() {
               <span className="text-primary">J</span>ulio Viana
             </a>
             <p className="text-center text-sm text-muted-foreground md:text-left">
-              Full-Stack Developer focused on performance optimization
+              {language === "en-US"
+                ? "Full-Stack Developer focused on performance optimization"
+                : "Desenvolvedor Full-Stack focado em otimização de performance"}
             </p>
           </div>
 
@@ -53,7 +59,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Julio Viana. All rights reserved.
+            &copy; {new Date().getFullYear()} Julio Viana. {t.footer.rights}
           </p>
         </div>
       </div>

@@ -1,55 +1,59 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/use-toast"
-import { Mail, MapPin, Phone } from "lucide-react"
-import SectionHeading from "./section-heading"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { Mail, MapPin, Phone } from "lucide-react";
+import SectionHeading from "./section-heading";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
-  const { toast } = useToast()
+  const { toast } = useToast();
+  const { translations, language } = useLanguage();
+  const t = translations[language].contactSection;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: any) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    })
+      title: t.form.success.title,
+      description: t.form.success.description,
+    });
 
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
-    })
-    setIsSubmitting(false)
-  }
+    });
+    setIsSubmitting(false);
+  };
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <SectionHeading title="Contact Me" subtitle="Get In Touch" />
+        <SectionHeading title={t.title} subtitle={t.subtitle} />
 
         <div className="grid gap-8 md:grid-cols-2">
           <motion.div
@@ -60,9 +64,9 @@ export default function Contact() {
           >
             <Card className="border-none shadow-lg h-full">
               <CardContent className="p-6">
-                <h3 className="mb-6 text-2xl font-bold">Let's Talk</h3>
+                <h3 className="mb-6 text-2xl font-bold">{t.letsTalk.title}</h3>
                 <p className="mb-8 text-muted-foreground">
-                  Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+                  {t.letsTalk.description}
                 </p>
 
                 <div className="space-y-6">
@@ -71,8 +75,12 @@ export default function Contact() {
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Email</h4>
-                      <p className="text-muted-foreground">juliovianadev@gmail.com</p>
+                      <h4 className="font-medium">
+                        {t.contactInfo.email.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {t.contactInfo.email.value}
+                      </p>
                     </div>
                   </div>
 
@@ -81,8 +89,12 @@ export default function Contact() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
-                      <p className="text-muted-foreground">+55 12 98805-3918</p>
+                      <h4 className="font-medium">
+                        {t.contactInfo.phone.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {t.contactInfo.phone.value}
+                      </p>
                     </div>
                   </div>
 
@@ -91,8 +103,12 @@ export default function Contact() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Location</h4>
-                      <p className="text-muted-foreground">Curitiba, Paraná, Brazil</p>
+                      <h4 className="font-medium">
+                        {t.contactInfo.location.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {t.contactInfo.location.value}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -112,20 +128,20 @@ export default function Contact() {
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Name
+                        {t.form.name.label}
                       </label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Your name"
+                        placeholder={t.form.name.placeholder}
                         required
                       />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Email
+                        {t.form.email.label}
                       </label>
                       <Input
                         id="email"
@@ -133,40 +149,46 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="Your email"
+                        placeholder={t.form.email.placeholder}
                         required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium">
-                      Subject
+                      {t.form.subject.label}
                     </label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Subject"
+                      placeholder={t.form.subject.placeholder}
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Message
+                      {t.form.message.label}
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Your message"
+                      placeholder={t.form.message.placeholder}
                       rows={5}
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting
+                      ? t.form.submit.sending
+                      : t.form.submit.default}
                   </Button>
                 </form>
               </CardContent>
@@ -175,5 +197,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

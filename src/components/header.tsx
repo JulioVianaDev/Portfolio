@@ -7,22 +7,25 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
+import { LanguageSwitcher } from "./language-switcher";
+import { useLanguage, translations } from "@/contexts/LanguageContext";
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Education", href: "#education" },
+  { id: "about", href: "#about" },
+  { id: "experience", href: "#experience" },
+  { id: "skills", href: "#skills" },
+  { id: "education", href: "#education" },
   //{ name: "Projects", href: "#projects" },
-  { name: "Awards", href: "#awards" },
+  { id: "awards", href: "#awards" },
   //  { name: "Blog", href: "#blog" },
-  { name: "Contact", href: "#contact" },
+  { id: "contact", href: "#contact" },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,32 +71,35 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
+            const translatedName = translations[language][item.id];
             return (
               <a
-                key={item.name}
+                key={item.id}
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
                   isActive && "text-primary font-semibold"
                 )}
               >
-                {item.name.charAt(0)}
+                {translatedName.charAt(0)}
                 <span
                   className={cn(
                     "transition-colors",
                     isActive ? "text-primary" : "text-foreground"
                   )}
                 >
-                  {item.name.substring(1)}
+                  {translatedName.substring(1)}
                 </span>
               </a>
             );
           })}
+          <LanguageSwitcher />
           <ThemeSwitcher />
         </nav>
 
         {/* Mobile Navigation */}
         <div className="flex items-center md:hidden">
+          <LanguageSwitcher />
           <ThemeSwitcher />
           <Button
             variant="ghost"
@@ -123,9 +129,10 @@ export default function Header() {
           <div className="container mx-auto py-4 px-4 space-y-3">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
+              const translatedName = translations[language][item.id];
               return (
                 <a
-                  key={item.name}
+                  key={item.id}
                   href={item.href}
                   className={cn(
                     "block py-2 text-sm font-medium transition-colors hover:text-primary",
@@ -133,9 +140,11 @@ export default function Header() {
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span className="text-primary">{item.name.charAt(0)}</span>
+                  <span className="text-primary">
+                    {translatedName.charAt(0)}
+                  </span>
                   <span className={isActive ? "text-primary" : ""}>
-                    {item.name.substring(1)}
+                    {translatedName.substring(1)}
                   </span>
                 </a>
               );

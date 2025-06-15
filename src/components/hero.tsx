@@ -1,11 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail } from "lucide-react"
-import { TypeAnimation } from "react-type-animation"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { language, translations } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 z-0">
@@ -21,7 +25,7 @@ export default function Hero() {
           className="mx-auto max-w-3xl"
         >
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            <span className="block">Hi, I'm</span>
+            <span className="block">{t.hero.greeting}</span>
             <span className="mt-2 block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Julio Viana
             </span>
@@ -30,13 +34,21 @@ export default function Hero() {
           <div className="mb-8 h-12 text-xl font-medium sm:text-2xl md:text-3xl">
             <TypeAnimation
               sequence={[
-                "Full-Stack Developer",
+                language === "en-US"
+                  ? "Full-Stack Developer"
+                  : "Desenvolvedor Full-Stack",
                 1000,
-                "Performance Specialist",
+                language === "en-US"
+                  ? "Performance Specialist"
+                  : "Especialista em Performance",
                 1000,
-                "Software Architect",
+                language === "en-US"
+                  ? "Software Architect"
+                  : "Arquiteto de Software",
                 1000,
-                "Robotics Enthusiast",
+                language === "en-US"
+                  ? "Robotics Enthusiast"
+                  : "Entusiasta de Robótica",
                 1000,
               ]}
               wrapper="span"
@@ -47,15 +59,24 @@ export default function Hero() {
           </div>
 
           <p className="mb-8 text-lg text-muted-foreground">
-            Optimizing applications to handle millions of requests with 8 years of programming experience
+            {language === "en-US"
+              ? "Optimizing applications to handle millions of requests with 8 years of programming experience"
+              : "Otimizando aplicações para lidar com milhões de requisições com 8 anos de experiência em programação"}
           </p>
 
           <div className="mb-10 flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" className="rounded-full">
-              <a href="#contact">Get in Touch</a>
+              <a href="#contact">{t.hero.cta}</a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full">
-              <a href="#experience">View Experience</a>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-full"
+            >
+              <a href="#experience">
+                {language === "en-US" ? "View Experience" : "Ver Experiência"}
+              </a>
             </Button>
           </div>
 
@@ -93,9 +114,7 @@ export default function Hero() {
             </motion.a>
           </div>
         </motion.div>
-
-
       </div>
     </section>
-  )
+  );
 }
