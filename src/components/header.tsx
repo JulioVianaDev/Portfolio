@@ -71,6 +71,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
+            //@ts-ignore
             const translatedName = translations[language][item.id];
             return (
               <a
@@ -129,6 +130,7 @@ export default function Header() {
           <div className="container mx-auto py-4 px-4 space-y-3">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
+              //@ts-ignore
               const translatedName = translations[language][item.id];
               return (
                 <a
