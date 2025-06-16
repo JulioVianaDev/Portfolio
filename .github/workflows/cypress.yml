@@ -71,25 +71,14 @@ jobs:
           name: cypress-videos
           path: cypress/videos
 
-      - name: Debug FTP Connection
-        if: success()
-        run: |
-          echo "Testing FTP server connection..."
-          ping -c 3 ${{ secrets.FTP_SERVER }} || echo "Ping failed"
-          nc -zv ${{ secrets.FTP_SERVER }} 21 || echo "FTP port 21 not accessible"
-          nc -zv ${{ secrets.FTP_SERVER }} 22 || echo "SSH/SFTP port 22 not accessible"
-
-      - name: Deploy to FTP Server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to Server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         if: success()
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ./public_html/
-          dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          server: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          local_path: './dist/*'
+          remote_path: './public_html'
+          delete_remote_files: true
