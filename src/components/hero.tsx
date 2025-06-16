@@ -27,7 +27,7 @@ export default function Hero() {
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             <span className="block">{t.hero.greeting}</span>
             <span className="mt-2 block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Julio Viana
+              Julio Viana 1
             </span>
           </h1>
 
