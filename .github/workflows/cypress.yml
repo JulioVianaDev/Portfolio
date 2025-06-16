@@ -71,6 +71,14 @@ jobs:
           name: cypress-videos
           path: cypress/videos
 
+      - name: Debug FTP Connection
+        if: success()
+        run: |
+          echo "Testing FTP server connection..."
+          ping -c 3 ${{ secrets.FTP_SERVER }} || echo "Ping failed"
+          nc -zv ${{ secrets.FTP_SERVER }} 21 || echo "FTP port 21 not accessible"
+          nc -zv ${{ secrets.FTP_SERVER }} 22 || echo "SSH/SFTP port 22 not accessible"
+
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         if: success()
