@@ -84,14 +84,23 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
         midFullstack: "Mid Level Fullstack",
         contentTeacher: "Mid Level Content Teacher",
         freelancer: "Fullstack Developer",
+        srFullstack: "Senior Fullstack Developer",
       },
       companies: {
+        softwareHouse: "Software House",
         enterness: "Enterness Easychannel",
         conectae: "LMS Platform Development Conectae",
         supergeeks: "SuperGeeks",
         freelancer: "Freelancer",
       },
       achievements: {
+        softwareHouse: [
+          "Developed and implemented a project and team management system for a software company, ensuring efficiency and productivity.",
+          "Implemented a payment and inventory management system for an e-commerce company, ensuring seamless and efficient transactions.",
+          "Developed and implemented a monitoring and alerting system to ensure service availability and performance, ensuring a consistent and satisfactory user experience.",
+          "Architected an entire AI system with automations and monitoring for a healthcare company, ensuring efficiency and productivity.",
+          "Resolved performance issues using distributed systems and refactoring to Golang",
+        ],
         enterness: [
           "Optimized API performance to handle millions of requests by reducing CPU usage from 92% to 18%, significantly lowering infrastructure costs.",
           "Increased request handling capacity by up to 42x in some cases, ensuring the system could scale efficiently under high traffic loads.",
@@ -296,18 +305,27 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
       title: "Experiência",
       subtitle: "Minha Jornada Profissional",
       roles: {
+        srFullstack: "Senior Fullstack Developer",
         fullstack: "Fullstack Pleno/Sênior",
         midFullstack: "Fullstack Pleno",
         contentTeacher: "Professor de Conteúdo Pleno",
         freelancer: "Desenvolvedor Fullstack",
       },
       companies: {
+        softwareHouse: "Software House",
         enterness: "Enterness Easychannel",
         conectae: "Desenvolvimento de Plataforma LMS Conectae",
         supergeeks: "SuperGeeks",
         freelancer: "Freelancer",
       },
       achievements: {
+        softwareHouse: [
+          "Desenvolvi e implementei um sistema de gerenciamento de projetos e times para uma empresa de software, garantindo eficiência e produtividade.",
+          "Implementei um sistema de pagamento e gerenciamento de estoque para uma empresa de e-commerce, garantindo transações perfeitas e eficientes.",
+          "Desenvolvi e implementei um sistema de monitoramento e alerta para garantir a disponibilidade e o desempenho dos serviços, garantindo uma experiência de usuário consistente e satisfatória.",
+          "Arquitetei todo um sistema de Ia com automações e monitoramento para empresa no ramo de saúde, garantindo eficiência e produtividade.",
+          "Resolvi problemas de performance utilizando sistemas distribuitos e refatoração para golang",
+        ],
         enterness: [
           "Otimizei o desempenho da API para lidar com milhões de requisições, reduzindo o uso de CPU de 92% para 18%, diminuindo significativamente os custos de infraestrutura.",
           "Aumentei a capacidade de processamento de requisições em até 42x em alguns casos, garantindo que o sistema pudesse escalar eficientemente sob altas cargas de tráfego.",
@@ -462,7 +480,7 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
       },
     },
   },
-};
+}
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en-US");

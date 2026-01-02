@@ -14,9 +14,14 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    titleKey: "srFullstack",
+    companyKey: "softwareHouse",
+    period: "2025 - 2026",
+  },
+  {
     titleKey: "fullstack",
     companyKey: "enterness",
-    period: "2023 - Present",
+    period: "2023 - 2025",
   },
   {
     titleKey: "midFullstack",
@@ -33,7 +38,7 @@ const experiences: Experience[] = [
     companyKey: "freelancer",
     period: "2017 - 2022",
   },
-];
+]
 
 export default function Experience() {
   const { translations, language } = useLanguage();
