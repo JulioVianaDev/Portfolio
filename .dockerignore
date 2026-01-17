@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+dist
+.git
+.gitignore
+.github
+README.md
+.env
+.env.local
+.env.*.local
+cypress
+cypress.config.cjs
+nohup.out
+.vscode
+.idea
+*.md
+.DS_Store
