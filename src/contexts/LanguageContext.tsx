@@ -7,6 +7,7 @@ type TranslationKeys =
   | "experience"
   | "skills"
   | "education"
+  | "projects"
   | "awards"
   | "contact"
   | "hero"
@@ -15,6 +16,7 @@ type TranslationKeys =
   | "experienceSection"
   | "skillsSection"
   | "educationSection"
+  | "projectsSection"
   | "awardsSection"
   | "contactSection";
 
@@ -34,6 +36,7 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
     experience: "Experience",
     skills: "Skills",
     education: "Education",
+    projects: "Projects",
     awards: "Awards",
     contact: "Contact",
     hero: {
@@ -194,6 +197,109 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
         },
       },
     },
+    projectsSection: {
+      title: "Projects",
+      subtitle: "My Recent Work",
+      items: {
+        realvidas: {
+          title: "RealVidas",
+          description:
+            "Complete management system for ambulance companies, covering everything from vehicle tracking to inventory and accounting.",
+          tags: ["Fleet Management", "Geolocation", "Inventory", "Finance"],
+        },
+      
+        forms: {
+          title: "Forms",
+          description:
+            "Dynamic form builder that lets my clients create and manage administrative forms to send to customers or fill out in different situations.",
+          tags: ["Dynamic Forms", "Google Forms API", "Automation"],
+        },
+        xyFlow: {
+          title: "XY Flow",
+          description:
+            "Fully automated and easy-to-manipulate block system, giving greater control over how every block behaves.",
+          tags: ["React Flow", "Block Automation", "No-code"],
+        },
+        goCloud: {
+          title: "Go Cloud",
+          description:
+            "Access to Google Drive via API, allowing my clients to comply with Brazil's LGPD by handling data directly in their own Google Drive, without me worrying about storage since it relies on the Drive API.",
+          tags: ["Golang", "Google Drive API", "LGPD", "Compliance"],
+        },
+        whatsmeow: {
+          title: "WhatsMeow",
+          description:
+            "System that connects clients' WhatsApp to social networks, enabling interaction with bots and building different integrations.",
+          tags: ["Golang", "WhatsApp API (Meta)", "Bots", "Automation"],
+        },
+        clinicas: {
+          title: "Clinics",
+          description:
+            "Appointment scheduling system for clinics, adding events to Google Calendar using a WhatsApp bot powered by AI.",
+          tags: ["Google Calendar", "WhatsApp Bot (Meta)", "AI", "Scheduling"],
+        },
+        chat: {
+          title: "Chat",
+          description:
+            "Virtualized chat view that makes it possible to handle a chat with more than 1,000 messages and 300 conversations without consuming the client's processing power.",
+          tags: ["React", "Virtualization", "Performance", "Customer Service"],
+        },
+        telemetria: {
+          title: "Telemetry & Monitoring",
+          description:
+            "Consulting and application performance tuning that makes the system flexible enough to validate every application error in real time, monitor the database, and capture the responses that may have caused the error, with WhatsApp notifications among other things.",
+          tags: ["Observability", "Grafana", "gRPC", "AWS (S3/DynamoDB/EKS)", "Database Monitoring", "WhatsApp Notifications"],
+        },
+        rxjsFix: {
+          title: "RxJS Fix",
+          description:
+            "Sometimes file processing can't be interrupted in real time, which drives up server costs. This fix sped up the rollout of a consulting engagement focused on cost reduction.",
+          tags: ["RxJS", "Node.js", "Cost Optimization", "Streams"],
+        },
+        kanban: {
+          title: "Kanban System",
+          description:
+            "Interactive kanban system with columns, triggers, assignments, tasks, and scheduling — an organizational mini CRM.",
+          tags: ["Kanban", "CRM", "Task Automation"],
+        },
+        cart: {
+          title: "Cart System",
+          description:
+            "E-commerce cart system with integrated payments, invoice generation, and customer analytics.",
+          tags: ["E-commerce", "Payments", "Electronic Invoicing", "Mercado Livre API", "Alibaba API"],
+        },
+        email: {
+          title: "Email System",
+          description:
+            "In-house email provider for the company, allowing clients to have their own email accounts within it.",
+          tags: ["Email Provider", "Infrastructure", "SMTP"],
+        },
+        mynds: {
+          title: "Mynds",
+          description:
+            "Interactive, gamified system for programming and electronics schools, connecting learning and assessments through a full ecosystem flow for kids.",
+          tags: ["Gamification", "EdTech", "React"],
+        },
+        apiDocs: {
+          title: "API Documentation with Lighthouse",
+          description:
+            "Automatic API documentation that lets service providers share it with their clients quickly and easily.",
+          tags: ["API Documentation", "Lighthouse", "DX"],
+        },
+        splitPayment: {
+          title: "Split Payment",
+          description:
+            "Integrations that let my users offer sales services to their own customers, receiving a percentage and profit split based on sales.",
+          tags: ["Split Payment", "Payments", "Financial Integrations"],
+        },
+        lmsConectae: {
+          title: "LMS Conectae",
+          description:
+            "Complete management system for a university, with access to historical files, conversations, classes, a content builder, and compliance with MEC standards.",
+          tags: ["LMS", "Education", "Ruby on Rails", "AWS (S3/DynamoDB/EKS)", "MEC Compliance"],
+        },
+      },
+    },
     awardsSection: {
       title: "Awards",
       subtitle: "Recognitions & Achievements",
@@ -259,6 +365,7 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
     experience: "Experiência",
     skills: "Habilidades",
     education: "Educação",
+    projects: "Projetos",
     awards: "Prêmios",
     contact: "Contato",
     hero: {
@@ -416,6 +523,109 @@ export const translations: Record<Language, Record<TranslationKeys, any>> = {
               "Empreendedorismo",
             ],
           },
+        },
+      },
+    },
+    projectsSection: {
+      title: "Projetos",
+      subtitle: "Meu Trabalho Recente",
+      items: {
+        realvidas: {
+          title: "RealVidas",
+          description:
+            "Sistema completo de gestão para empresas de ambulância, desde trackeamento do veículo até estoque e parte contábil, incluindo pagamentos.",
+          tags: ["Gestão", "Geolocalização", "Estoque", "Financeiro"],
+        },
+       
+        forms: {
+          title: "Forms",
+          description:
+            "Formulário dinâmico, permite que meus clientes criem e gerenciem formulários administrativos para enviar aos clientes ou preencherem em situações.",
+          tags: ["Formulários Dinâmicos", "Google Forms API", "Automação"],
+        },
+        xyFlow: {
+          title: "XY Flow",
+          description:
+            "Sistema de blocos totalmente automatizado e fácil de manipular com isto consigo ter um controle maior sobre como todos os blocos irão funcionar.",
+          tags: ["React Flow", "Automação de Blocos", "No-code"],
+        },
+        goCloud: {
+          title: "Go Cloud",
+          description:
+            "Acesso ao Google Drive via API, com isto consigo fazer com que meus clientes respeitem a LGPD tratando os dados diretamente no Google Drive deles e sem me preocupar com storage pois com isto usamos a API do Drive.",
+          tags: ["Golang", "Google Drive API", "LGPD", "Compliance"],
+        },
+        whatsmeow: {
+          title: "WhatsMeow",
+          description:
+            "Sistema que conecta o WhatsApp dos clientes em redes sociais, fazendo com que seja possível interagir com bots e construir diferentes coisas.",
+          tags: ["Golang", "WhatsApp API (Meta)", "Bots", "Automação"],
+        },
+        clinicas: {
+          title: "Clínicas",
+          description:
+            "Sistema de gestão de agendamentos para clínicas, adicionando eventos ao calendário do Google Agenda utilizando bot e IA no WhatsApp.",
+          tags: ["Google Agenda", "WhatsApp Bot (Meta)", "IA", "Agendamento"],
+        },
+        chat: {
+          title: "Chat",
+          description:
+            "Visualização de chat virtualizado, fazendo com que seja possível dinamizar um chat com mais de 1000 mensagens e 300 atendimentos sem gastar processamento do cliente.",
+          tags: ["React", "Virtualização", "Performance", "Atendimento"],
+        },
+        telemetria: {
+          title: "Telemetria e Monitoramento",
+          description:
+            "Consultoria e ajustes de performance da aplicação fazendo com que o sistema seja flexível, conseguindo validar todos os erros da aplicação em tempo real, monitorar o banco de dados e receber as respostas que possam ter causado o erro, com notificação via WhatsApp entre outras coisas.",
+          tags: ["Observabilidade", "Grafana", "gRPC", "AWS (S3/DynamoDB/EKS)", "Monitoramento de Banco de Dados", "Notificações WhatsApp"],
+        },
+        rxjsFix: {
+          title: "Correção de RxJS",
+          description:
+            "Às vezes o processamento de um arquivo não pode ser interrompido em tempo real e isto causa custos de servidor, com esta correção agilizei na implantação de uma consultoria para redução de custos.",
+          tags: ["RxJS", "Node.js", "Otimização de Custos", "Streams"],
+        },
+        kanban: {
+          title: "Sistema de Kanban",
+          description:
+            "Sistema interativo de kanban com colunas, gatilhos, atribuições, tarefas e agendamento, um mini CRM organizacional.",
+          tags: ["Kanban", "CRM", "Automação de Tarefas"],
+        },
+        cart: {
+          title: "Sistema de Carrinho",
+          description:
+            "Sistema de carrinho para e-commerce com pagamento integrado, geração de nota fiscal e análise de clientes.",
+          tags: ["E-commerce", "Pagamentos", "Nota Fiscal Eletrônica", "Mercado Livre API", "Alibaba API"],
+        },
+        email: {
+          title: "Sistema de Email",
+          description:
+            "Próprio provedor de email para a empresa fazendo com que os clientes possam ter seus próprios cadastros de email nisto.",
+          tags: ["Provedor de Email", "Infraestrutura", "SMTP"],
+        },
+        mynds: {
+          title: "Mynds",
+          description:
+            "Um sistema interativo e gamificado para escolas de programação e eletrônica, conectada a aprendizado e avaliações com todo o fluxo de ecossistema para as crianças.",
+          tags: ["Gamificação", "EdTech", "React"],
+        },
+        apiDocs: {
+          title: "Documentação de API com Lighthouse",
+          description:
+            "Documentações de APIs automáticas fazendo com que provedores de serviço possam enviar aos clientes de maneira fácil e rápida de utilizar.",
+          tags: ["Documentação de API", "Lighthouse", "DX"],
+        },
+        splitPayment: {
+          title: "Split Payment",
+          description:
+            "Integrações aonde meus usuários podem oferecer serviços de vendas aos clientes deles recebendo porcentagem e divisão de lucro baseado nas vendas.",
+          tags: ["Split Payment", "Pagamentos", "Integrações Financeiras"],
+        },
+        lmsConectae: {
+          title: "LMS Conectae",
+          description:
+            "Sistema completo de gestão para uma faculdade, com acesso a arquivos históricos, conversas, aulas, montador de conteúdo e com os padrões do MEC.",
+          tags: ["LMS", "Educação", "Ruby on Rails", "AWS (S3/DynamoDB/EKS)", "Conformidade MEC"],
         },
       },
     },

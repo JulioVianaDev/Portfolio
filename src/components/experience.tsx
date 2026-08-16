@@ -21,7 +21,7 @@ const experiences: Experience[] = [
   {
     titleKey: "fullstack",
     companyKey: "enterness",
-    period: "2023 - 2025",
+    period: "2023 - 2026",
   },
   {
     titleKey: "midFullstack",

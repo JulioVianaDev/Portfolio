@@ -3,7 +3,7 @@ import About from "@/components/about";
 import Experience from "@/components/experience";
 import Skills from "@/components/skills";
 import Education from "@/components/education";
-//import Projects from "@/components/projects";
+import Projects from "@/components/projects";
 import Awards from "@/components/awards";
 //import Blog from "@/components/blog";
 import Contact from "@/components/contact";
@@ -21,7 +21,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Education />
-        {/* <Projects /> */}
+        <Projects />
         <Awards />
         {/* <Blog /> */}
         <Contact />
